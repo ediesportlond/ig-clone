@@ -3,13 +3,13 @@ import Post from '../components/Post';
 import styles from '../styles';
 import photolist from '../photolist';
 
-export default function Feed() {
+export default function Feed({navigation}) {
     return (
         <>
             <ScrollView style={styles.feed} >
                 {
                     photolist.map(post=>(
-                        <Post key={post.id} post={post}/>
+                        <Post navigation={navigation} key={post.id} post={post}/>
                     ))
                 }
             </ScrollView>
